@@ -1,7 +1,4 @@
 ************************** Social Computing Assignment 1 ********************************
-Name - Vandit Sharma
-Roll no. - 17EC10060
-*****************************************************************************************
 
 Information - 
 
@@ -24,7 +21,7 @@ Instructions -
 
 Task 1 -
 
--> cd 17EC10060/SocComp/A1 ....(A1 is the venv folder)
+-> cd venv
 -> source bin/activate....(to activate venv)
 -> Downloaded zip files are already present
 -> Running network_name.py generates the desired subgraph from its .txt file
