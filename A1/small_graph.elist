@@ -1,0 +1,17 @@
+# Undirected graph (each unordered pair of nodes is saved once): p2p-Gnutella04-subgraph-1.elist
+# Nodes: 10876 Edges: 39994
+# NodeId	NodeId
+6	7
+6	4
+6	5
+7	4
+7	5
+4	5
+4	3
+4	2
+3	2
+3	5
+5	1
+2	0
+2	1
+1	0

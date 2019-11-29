@@ -1,0 +1,73 @@
+************************** Social Computing Assignment 1 ********************************
+Name - Vandit Sharma
+Roll no. - 17EC10060
+*****************************************************************************************
+
+Information - 
+
+-> Python version used - 2.7
+-> Developed on Ubuntu (Virtual Environment has been used)
+
+Packages involved - 
+
+-> SNAP (local installation present - NO NEED TO INSTALL)
+-> numpy (installed using pip in venv - needed for Gnuplot)
+-> Python virtualenv
+-> Gnuplot (installed from sourceforge)
+
+**Note - .png files need to be generated in gen_structure.py but it doesn't work on some 
+  versions of Gnuplot as the png terminal type is not available. We need to download additional 
+  packages.... Refer - 
+  https://stackoverflow.com/questions/22816030/terminal-png-missing-when-using-gnuplot  
+
+Instructions - 
+
+Task 1 -
+
+-> cd 17EC10060/SocComp/A1 ....(A1 is the venv folder)
+-> source bin/activate....(to activate venv)
+-> Downloaded zip files are already present
+-> Running network_name.py generates the desired subgraph from its .txt file
+   Eg. python soc-Epinions1.py will generate the desired subgraph of soc-Epinions1 network
+-> Subgraphs are placed in subgraphs folder for reference but a copy is required in the A1
+   directory (where you currently are) for other functions to work
+-> To generate structural metrics run gen_structure.py with subgraph name
+   Eg. python gen_structure.py email-Enron-subgraph
+-> Code should print all the desired results
+
+Task 2 - 
+
+-> To generate centrality measures run generate_centrality.py
+   Eg. python generate_centrality.py email-Enron-subgraph
+-> Variation of FLOYD WARSHALL ALGORITHM has been implemented for Closeness and Betweenness 
+   Centrality 
+-> Due to the large size of subgraphs, this program is getting "Killed" on my PC due to memory 
+   and swap exhaustion error (it might run on yours)....Refer - 
+   https://stackoverflow.com/questions/726690/what-killed-my-process-and-why
+   It is quite memory intensive.
+-> A somewhat better implementation is in gen_centrality4.py where I have used lists instead of
+   sets to make it more memory efficient. It is still getting killed for given subgraphs.
+-> If we comment all the code corresponding to path[][] dictionary in these files, and comment the code of 
+   betweeness centrality, it works fine for closeness centrality but is very slow again.
+-> However, this program is running fine for relatively smaller graphs. A small graph named 
+   small_graph.elist has been included for reference
+-> To run it -
+   python gen_centrality.py small_graph
+   python analyze_centrality.py small_graph
+   Computed values of Centralities match this document (A graph taken from the internet)-
+   https://www.researchgate.net/figure/Example-to-illustrate-the-calculation-of-betweenness-centrality_fig10_304065361
+-> Files have been sorted by centrality value
+-> As an alternate to gen_centrality.py not working,gen_centrality2.py has been written
+-> It can only compute Degree and Closeness centrality though
+-> Closeness centrality has been implemented in a naive way - simply calculate distance 
+   between two nodes using the module snap.GetShortPath(Graph, i, j), which uses BFS
+-> This program takes several hours (8 hrs minimum) to run depending on the subgraph, but is faster than
+   that in gen_centrality.py and gen_centrality4.py
+-> Degree and Closeness Centrality calculation files of two subgraphs (p2p and email-Enron) have been generated using 
+   this program (gen_centrality2.py) 
+-> To analyze centrality measures run analyze_centrality.py
+   Eg. python analyze_centrality.py email-Enron-subgraph
+
+**Note - The program is not printing calculated Closeness and Betweenness centrality as it 
+  has not been asked to print. It is however generating it internally and using it to compare
+  them with the values from files generated in Task 2.1
